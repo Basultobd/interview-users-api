@@ -92,7 +92,7 @@ const update = (_id, { role, email, password }) => {
     const userInDB = results[0];
     const userWithNewInfo = results[1];
     // Merging elements with same properties
-    const userUpdated = Object.assign({}, userInDB, userWithNewInfo);
+    const userUpdated = { ...userInDB, ...userWithNewInfo };
     return db.put(userUpdated);
   })
   .catch(error => Promise.reject(customError(error.message, error.status)));
