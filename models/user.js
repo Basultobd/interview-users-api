@@ -89,8 +89,7 @@ const addMany = usersList => {
 const update = (_id, { role, email, password }) => {
   return Promise.all([db.get(_id), userSchema(_id, role, email, password)])
   .then(results => {
-    const userInDB = results[0];
-    const userWithNewInfo = results[1];
+    const [userInDB, userWithNewInfo] = results;
     // Merging elements with same properties
     const userUpdated = { ...userInDB, ...userWithNewInfo };
     return db.put(userUpdated);
