@@ -13,4 +13,16 @@ Proyecto que forma parte del proceso de aplicación de CoatíLabs
 **Bonus**
 - La aplicación implementá JWT
 - Frontend construido con algun Framework como Angular, Vue o React
-- Implementar método que permita crear varios usuarios en una sola petición.
+- Implementar método que permita crear varios usuarios en una sola petición. 
+
+**Extra**
+Si quieres usar la configuración de *prettier* en tu editor de código, agregar la regla al *.eslintsrc.json*:
+
+```
+{
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error"
+  }
+}
+```
